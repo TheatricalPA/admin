@@ -47,7 +47,7 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
               displayName: o.display_name!,
               logoUrl: o.branding?.logo_url,
             }))}
-            currentOrgId={session.user.org_id}
+            currentOrgId={session?.user?.org_id}
           />
           <Separator orientation="horizontal" className="my-4" />
           <SidebarNav items={sidebarNavItems} />

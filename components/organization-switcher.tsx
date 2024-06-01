@@ -60,14 +60,14 @@ export function OrganizationSwitcher({
         >
           <Avatar className="mr-2 size-5 rounded-sm">
             <AvatarImage
-              src={organization.logoUrl}
-              alt={organization.displayName}
+              src={organization?.logoUrl}
+              alt={organization?.displayName}
             />
             <AvatarFallback className="rounded-sm">
-              {organization.displayName[0].toUpperCase()}
+              {organization?.displayName[0].toUpperCase()}
             </AvatarFallback>
           </Avatar>
-          <span className="truncate">{organization.displayName}</span>
+          <span className="truncate">{organization?.displayName}</span>
           <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -99,7 +99,7 @@ export function OrganizationSwitcher({
                   <CheckIcon
                     className={cn(
                       "ml-auto h-4 w-4",
-                      organization.slug === org.slug
+                      organization?.slug === org.slug
                         ? "opacity-100"
                         : "opacity-0"
                     )}
