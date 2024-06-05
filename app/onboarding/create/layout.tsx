@@ -16,7 +16,7 @@ export default async function CreateLayout({
 
   // fetch the latest user data to ensure that the `email_verified` is not stale
   const user = await fetch(
-    new URL("/userinfo", `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}`),
+    new URL("/userinfo", `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN_CUSTOM || process.env.NEXT_PUBLIC_AUTH0_DOMAIN}`),
     {
       headers: {
         Authorization: `Bearer ${(await onboardingClient.getAccessToken()).accessToken}`,

@@ -23,7 +23,7 @@ export const appClient = initAuth0({
   clientID: process.env.AUTH0_CLIENT_ID,
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
   baseURL: process.env.APP_BASE_URL,
-  issuerBaseURL: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}`,
+  issuerBaseURL: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN_CUSTOM || process.env.NEXT_PUBLIC_AUTH0_DOMAIN}`,
   secret: process.env.SESSION_ENCRYPTION_SECRET,
   idpLogout: true,
 })

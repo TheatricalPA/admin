@@ -31,7 +31,7 @@ import { SubmitButton } from "@/components/submit-button"
 
 import { updateConnection } from "./actions"
 
-const CALLBACK_URL = `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/login/callback`
+const CALLBACK_URL = `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN_CUSTOM || process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/login/callback`
 
 export interface SamlConnection {
   id: string
@@ -172,7 +172,7 @@ export function UpdateSamlConnectionForm({ connection }: Props) {
                 The request will be signed with <Code>RSA-SHA256</Code>.{" "}
                 <a
                   className="underline underline-offset-4"
-                  href={`https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/pem?cert=connection`}
+                  href={`https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN_CUSTOM || process.env.NEXT_PUBLIC_AUTH0_DOMAIN}/pem?cert=connection`}
                   target="_blank"
                 >
                   Download the certificate
