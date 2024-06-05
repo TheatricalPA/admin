@@ -6,7 +6,11 @@ const nextConfig = {
             source: '/',
             destination: '/dashboard/organization/general',
             permanent: true,
-          },
+          },          {
+            source: '/dashboard',
+            destination: '/dashboard/organization/general',
+            permanent: true,
+          }
         ]
       }    
 };
