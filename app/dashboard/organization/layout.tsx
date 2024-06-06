@@ -111,10 +111,12 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
         />
         <Separator orientation="horizontal" className="my-4" />
         <SidebarNav items={adminSidebarNavItems} className="grow" />
+{/*        
         <div className="flex flex-col space-y-2">
           <Link href="/dashboard/account/profile">Profile</Link>
           <Link href="/api/auth/logout">Log Out</Link>
         </div>
+*/}
       </aside>
       <div className="workspace p-8 lg:w-4/5">
         <nav className="mx-auto flex items-center justify-between">
