@@ -99,6 +99,7 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
             SaaStart
           </Link>
         </div>
+{/*        
         <OrganizationSwitcher
           className="flex"
           organizations={orgs.map((o) => ({
@@ -110,6 +111,7 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
           currentOrgId={session.user.org_id}
         />
         <Separator orientation="horizontal" className="my-4" />
+*/}
         <SidebarNav items={adminSidebarNavItems} className="grow" />
 {/*        
         <div className="flex flex-col space-y-2">
