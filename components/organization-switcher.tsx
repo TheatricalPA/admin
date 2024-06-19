@@ -112,21 +112,6 @@ export function OrganizationSwitcher({
               ))}
             </CommandGroup>
           </CommandList>
-          <CommandSeparator />
-          <CommandList>
-            <CommandGroup>
-              <CommandItem
-                onSelect={() => {
-                  router.push("/onboarding/create")
-                  setOpen(false)
-                }}
-                className="cursor-pointer"
-              >
-                <PlusCircledIcon className="mr-2 size-4" />
-                Create Organization
-              </CommandItem>
-            </CommandGroup>
-          </CommandList>
         </Command>
       </PopoverContent>
     </Popover>

@@ -39,21 +39,9 @@ export default async function DashboardLayout({
             }))}
             currentOrgId={session.user.org_id}
           />
-
-          <Link
-            href="/dashboard"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Home
-          </Link>
         </div>
 
         <div className="flex flex-row gap-x-4">
-          <Button variant="ghost" asChild className="px-2 py-2">
-            <Link href="/dashboard/organization/general">
-              <SettingsIcon className="h-[1.2rem] w-[1.2rem]" />
-            </Link>
-          </Button>
           <UserNav />
         </div>
       </nav>
@@ -65,26 +53,6 @@ export default async function DashboardLayout({
       <footer className="mx-auto max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
         <div className="flex justify-between">
           <div className="flex items-center space-x-2">
-            <Auth0Logo className="h-6 w-6" />
-
-            <div className="font-mono font-semibold">
-              <Link href="/">SaaStart</Link>
-            </div>
-
-            <div>
-              <Button variant="link" asChild>
-                <Link href="/">Home</Link>
-              </Button>
-
-              <Button variant="link" asChild>
-                <Link
-                  href="https://github.com/auth0-developer-hub/auth0-b2b-saas-starter"
-                  target="_blank"
-                >
-                  Source
-                </Link>
-              </Button>
-            </div>
           </div>
 
           <div className="items-center gap-x-2">

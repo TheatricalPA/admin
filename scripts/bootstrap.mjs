@@ -246,7 +246,7 @@ try {
   // prettier-ignore
   const createRoleArgs = [
     "roles", "create",
-    "--name", "admin",
+    "--name", "Administrator",
     "--description", "Manage the organization's configuration.",
     "--json", "--no-input"
   ];

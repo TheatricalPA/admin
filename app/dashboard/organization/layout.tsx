@@ -16,10 +16,6 @@ import { SidebarNav } from "@/components/sidebar-nav"
 
 const sidebarNavItems = [
   {
-    title: "General Settings",
-    href: "/dashboard/organization/general",
-  },
-  {
     title: "Members",
     href: "/dashboard/organization/members",
   },
@@ -45,7 +41,7 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
     redirect("/api/auth/login")
   }
 
-  if (getRole(session.user) !== "admin") {
+  if (getRole(session.user) !== "Administrator") {
     return (
       <div className="flex items-center justify-center">
         <Card className="w-[450px]">

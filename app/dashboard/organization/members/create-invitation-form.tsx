@@ -69,7 +69,7 @@ export function CreateInvitationForm() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="member">Member</SelectItem>
-                  <SelectItem value="admin">Admin</SelectItem>
+                  <SelectItem value="Administrator">Administrator</SelectItem>
                 </SelectContent>
               </Select>
             </div>

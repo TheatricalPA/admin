@@ -22,7 +22,7 @@ export const createInvitation = withServerActionAuth(
     if (
       !role ||
       typeof role !== "string" ||
-      !["member", "admin"].includes(role)
+      !["member", "Administrator"].includes(role)
     ) {
       return {
         error: "Role is required and must be either 'member' or 'admin'.",
@@ -61,7 +61,7 @@ export const createInvitation = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )
 
@@ -84,7 +84,7 @@ export const revokeInvitation = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )
 
@@ -117,7 +117,7 @@ export const removeMember = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )
 
@@ -132,7 +132,7 @@ export const updateRole = withServerActionAuth(
     if (
       !role ||
       typeof role !== "string" ||
-      !["member", "admin"].includes(role)
+      !["member", "Administrator"].includes(role)
     ) {
       return {
         error: "Role is required and must be either 'member' or 'admin'.",
@@ -185,6 +185,6 @@ export const updateRole = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )

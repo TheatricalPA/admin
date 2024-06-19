@@ -48,7 +48,7 @@ export default async function Members() {
             i.roles &&
             i.roles[0] &&
             i.roles[0] === process.env.AUTH0_ADMIN_ROLE_ID
-              ? "admin"
+              ? "Administrator"
               : "member",
           url: i.invitation_url,
         }))}

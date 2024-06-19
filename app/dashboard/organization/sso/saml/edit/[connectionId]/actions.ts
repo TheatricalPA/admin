@@ -138,6 +138,6 @@ export const updateConnection = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )

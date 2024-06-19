@@ -49,6 +49,6 @@ export const updateMfaPolicy = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )
