@@ -16,6 +16,10 @@ import { SidebarNav } from "@/components/sidebar-nav"
 
 const sidebarNavItems = [
   {
+    title: "General Settings",
+    href: "/dashboard/organization/general",
+  },  
+  {
     title: "Members",
     href: "/dashboard/organization/members",
   },

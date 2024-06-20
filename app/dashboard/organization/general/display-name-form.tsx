@@ -40,6 +40,8 @@ export function DisplayNameForm({ organization }: Props) {
               type="text"
               placeholder="acme"
               defaultValue={organization.displayName}
+              disabled
+              readOnly
             />
           </div>
 
@@ -59,7 +61,6 @@ export function DisplayNameForm({ organization }: Props) {
           </div>
         </CardContent>
         <CardFooter className="flex justify-end">
-          <SubmitButton>Save</SubmitButton>
         </CardFooter>
     </Card>
   )

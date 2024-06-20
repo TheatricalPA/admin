@@ -14,7 +14,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SubmitButton } from "@/components/submit-button"
 
-import { updateDisplayName } from "./actions"
 
 interface Props {
   displayName: string
@@ -23,17 +22,6 @@ interface Props {
 export function DisplayNameForm({ displayName }: Props) {
   return (
     <Card>
-      <form
-        action={async (formData: FormData) => {
-          const { error } = await updateDisplayName(formData)
-
-          if (error) {
-            toast.error(error)
-          } else {
-            toast.success("Your display name has been updated.")
-          }
-        }}
-      >
         <CardHeader>
           <CardTitle>Display Name</CardTitle>
           <CardDescription>
@@ -57,7 +45,6 @@ export function DisplayNameForm({ displayName }: Props) {
         <CardFooter className="flex justify-end">
           <SubmitButton>Save</SubmitButton>
         </CardFooter>
-      </form>
     </Card>
   )
 }

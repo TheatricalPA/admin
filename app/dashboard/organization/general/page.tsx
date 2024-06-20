@@ -13,7 +13,7 @@ export default async function GeneralSettings() {
     <div className="space-y-2">
       <PageHeader
         title="General Settings"
-        description="Update your organization's general settings."
+        description="Your organization's general settings."
       />
 
       <DisplayNameForm
