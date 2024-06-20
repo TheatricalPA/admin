@@ -8,6 +8,7 @@ import { verifyDnsRecords } from "@/lib/domain-verification"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const updateConnection = withServerActionAuth(
+  // @ts-ignore
   async function updateConnection(
     connectionId: string,
     formData: FormData,

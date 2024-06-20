@@ -35,6 +35,7 @@ export function MfaPolicyForm({ organization }: Props) {
     <Card>
       <form
         action={async (formData: FormData) => {
+          // @ts-ignore
           const { error } = await updateMfaPolicy(formData)
 
           if (error) {

@@ -19,7 +19,9 @@ export default async function DashboardLayout({
 
   // if the user is not authenticated, redirect to login
   if (!session?.user) {
-    redirect("/api/auth/login")
+    const searchParams = "organization=org_ATqu7coKNwyXgCmW";
+
+    redirect(`/api/auth/login?${searchParams}`);    
   }
 
   const { data: orgs } = await managementClient.users.getUserOrganizations({

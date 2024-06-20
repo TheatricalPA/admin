@@ -9,7 +9,9 @@ export async function updateDisplayName(formData: FormData) {
   const session = await appClient.getSession()
 
   if (!session) {
-    return redirect("/api/auth/login")
+    const searchParams = "organization=org_ATqu7coKNwyXgCmW";
+
+    return redirect(`/api/auth/login?${searchParams}`);    
   }
 
   const displayName = formData.get("display_name")

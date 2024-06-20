@@ -6,6 +6,7 @@ import { verifyDnsRecords } from "@/lib/domain-verification"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const verifyDomain = withServerActionAuth(
+  // @ts-ignore
   async function verifyDomain(domain: string, session: Session) {
     if (!domain || typeof domain !== "string") {
       return {

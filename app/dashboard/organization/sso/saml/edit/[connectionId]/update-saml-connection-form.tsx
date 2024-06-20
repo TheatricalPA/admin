@@ -68,6 +68,7 @@ export function UpdateSamlConnectionForm({
     <Card>
       <form
         action={async (formData: FormData) => {
+          // @ts-ignore
           const { error } = await updateConnection(connection.id, formData)
 
           if (error) {

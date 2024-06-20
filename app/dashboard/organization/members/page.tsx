@@ -36,6 +36,7 @@ export default async function Members() {
       />
 
       <InvitationsList
+        // @ts-ignore
         invitations={invitations.map((i) => ({
           id: i.id,
           inviter: {

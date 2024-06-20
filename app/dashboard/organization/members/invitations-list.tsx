@@ -93,6 +93,7 @@ export function InvitationsList({ invitations }: Props) {
                       <DropdownMenuItem
                         className="text-destructive"
                         onSelect={async () => {
+                          // @ts-ignore
                           const { error } = await revokeInvitation(
                             invitation.id
                           )

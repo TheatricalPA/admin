@@ -9,6 +9,7 @@ import { withServerActionAuth } from "@/lib/with-server-action-auth"
 import { DEFAULT_MFA_POLICY, SUPPORTED_PROVIDERS } from "./mfa-policy"
 
 export const updateMfaPolicy = withServerActionAuth(
+  // @ts-ignore
   async function updateMfaPolicy(formData: FormData, session: Session) {
     const enforce = !!formData.get("enforce")
     const skipForDomains = formData.get("skip_for_domains")

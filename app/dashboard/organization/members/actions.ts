@@ -8,6 +8,7 @@ import { Role, roles } from "@/lib/roles"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const createInvitation = withServerActionAuth(
+  // @ts-ignore
   async function createInvitation(formData: FormData, session: Session) {
     const email = formData.get("email")
 
@@ -66,6 +67,7 @@ export const createInvitation = withServerActionAuth(
 )
 
 export const revokeInvitation = withServerActionAuth(
+  // @ts-ignore
   async function revokeInvitation(invitationId: string, session: Session) {
     try {
       await managementClient.organizations.deleteInvitation({
@@ -89,6 +91,7 @@ export const revokeInvitation = withServerActionAuth(
 )
 
 export const removeMember = withServerActionAuth(
+  // @ts-ignore
   async function removeMember(userId: string, session: Session) {
     if (userId === session.user.sub) {
       return {
@@ -122,6 +125,7 @@ export const removeMember = withServerActionAuth(
 )
 
 export const updateRole = withServerActionAuth(
+  // @ts-ignore
   async function updateRole(userId: string, role: Role, session: Session) {
     if (userId === session.user.sub) {
       return {

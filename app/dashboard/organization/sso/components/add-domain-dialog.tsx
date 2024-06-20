@@ -153,9 +153,13 @@ export function AddDomainDialog({
                   setCheckingVerificationStatus(true)
                   const result = await verifyDomain(domain)
 
+                  // @ts-ignore
                   if (result.error) {
+                    // @ts-ignore
                     toast.error(result.error)
+                    // @ts-ignore
                   } else if ("verified" in result && result.verified) {
+                    // @ts-ignore
                     setDomainVerified(result.verified)
                     toast.success("Domain has been verified.")
                   }

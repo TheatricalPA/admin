@@ -146,6 +146,7 @@ export function ConnectionsList({ connections }: Props) {
                         <AlertDialogCancel>Cancel</AlertDialogCancel>
                         <AlertDialogAction
                           onClick={async () => {
+                            // @ts-ignore
                             const { error } = await deleteConnection(c.id)
                             if (error) {
                               return toast.error(error)

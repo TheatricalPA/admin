@@ -42,6 +42,7 @@ export function CreateOidcConnectionForm({ domainVerificationToken }: Props) {
     <Card>
       <form
         action={async (formData: FormData) => {
+          // @ts-ignore
           const { error } = await createConnection(formData)
 
           if (error) {

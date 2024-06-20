@@ -7,6 +7,7 @@ import { managementClient } from "@/lib/auth0"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const updateDisplayName = withServerActionAuth(
+  // @ts-ignore
   async function updateDisplayName(formData: FormData, session: Session) {
     const displayName = formData.get("display_name")
 

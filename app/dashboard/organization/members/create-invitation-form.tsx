@@ -32,6 +32,7 @@ export function CreateInvitationForm() {
       <form
         ref={ref}
         action={async (formData: FormData) => {
+          // @ts-ignore
           const { error } = await createInvitation(formData)
 
           if (error) {

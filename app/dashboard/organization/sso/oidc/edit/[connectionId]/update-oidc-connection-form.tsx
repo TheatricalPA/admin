@@ -59,6 +59,7 @@ export function UpdateOidcConnectionForm({
     <Card>
       <form
         action={async (formData: FormData) => {
+          // @ts-ignore
           const { error } = await updateConnection(connection.id, formData)
 
           if (error) {

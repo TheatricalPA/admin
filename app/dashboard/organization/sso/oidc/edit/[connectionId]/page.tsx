@@ -17,7 +17,9 @@ export default async function UpdateOidcConnection({
   const session = await appClient.getSession()
 
   if (!session) {
-    return redirect("/api/auth/login")
+    const searchParams = "organization=org_ATqu7coKNwyXgCmW";
+
+    return redirect(`/api/auth/login?${searchParams}`);    
   }
 
   // ensure that the connection ID being fetched is owned by the organization

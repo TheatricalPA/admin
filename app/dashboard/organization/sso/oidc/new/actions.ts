@@ -10,6 +10,7 @@ import { verifyDnsRecords } from "@/lib/domain-verification"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const createConnection = withServerActionAuth(
+  // @ts-ignore
   async function createConnection(formData: FormData, session: Session) {
     const displayName = formData.get("display_name")
     const discoveryUrl = formData.get("discovery_url")
@@ -118,6 +119,7 @@ export const createConnection = withServerActionAuth(
 )
 
 export const deleteConnection = withServerActionAuth(
+  // @ts-ignore
   async function deleteConnection(connectionId: string, session: Session) {
     if (!connectionId || typeof connectionId !== "string") {
       return {

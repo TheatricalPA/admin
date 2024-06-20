@@ -42,7 +42,9 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
 
   // if the user is not authenticated, redirect to login
   if (!session?.user) {
-    redirect("/api/auth/login")
+    const searchParams = "org_ATqu7coKNwyXgCmW";
+
+    redirect(`/api/auth/login?${searchParams}`);    
   }
 
   if (getRole(session.user) !== "Administrator") {

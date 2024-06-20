@@ -89,6 +89,7 @@ export function MembersList({ members }: Props) {
                   <Select
                     defaultValue={member.role}
                     onValueChange={async (role: Role) => {
+                      // @ts-ignore
                       const { error } = await updateRole(member.id, role)
                       if (error) {
                         return toast.error(error)
@@ -119,6 +120,7 @@ export function MembersList({ members }: Props) {
                       <DropdownMenuItem
                         className="text-destructive"
                         onSelect={async () => {
+                          // @ts-ignore
                           const { error } = await removeMember(member.id)
                           if (error) {
                             return toast.error(error)

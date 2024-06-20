@@ -13,6 +13,7 @@ export const GET = appClient.handleAuth({
     const searchParams = request.nextUrl.searchParams
     const organization = searchParams.get("organization")
     const invitation = searchParams.get("invitation")
+    console.log("Organization = ", organization);
 
     return {
       authorizationParams: {
