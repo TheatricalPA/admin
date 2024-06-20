@@ -12,7 +12,7 @@ export default async function Home() {
   const session = await appClient.getSession()
 
   return (
-    <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <div className="container relative sm:grid h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       {session ? (
         <a
           href="/api/auth/logout"
@@ -27,7 +27,7 @@ export default async function Home() {
         <a
           href="/api/auth/login"
           className={cn(
-            buttonVariants({ variant: "ghost" }),
+            buttonVariants({ variant: "link" }),
             "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
@@ -36,15 +36,15 @@ export default async function Home() {
       )}
 
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
-        <div className="absolute inset-0 bg-zinc-900" />
+        <div className="absolute inset-0 bg-black" />
         <div className="relative z-20 flex items-center text-lg font-medium">
           <Auth0Logo className="mr-2 size-8" />
-          <span className="font-mono font-medium">SaaStart</span>
+          <span className="font-semibold">SaaStart</span>
         </div>
-        <div className="relative z-20 mt-auto">
+        <div className="relative z-20 m-auto max-w-sm text-center">
           <blockquote className="space-y-2">
-            <div className="space-y-1">
-              <p className="text-lg">
+            <div className="space-y-8">
+              <p className="text-lg font-medium">
                 SaaStart is a reference B2B SaaS application built using Next.js
                 and Auth0 by Okta.
               </p>
@@ -54,13 +54,10 @@ export default async function Home() {
                 configuration and more out-of-the-box.
               </p>
             </div>
-            <footer className="text-sm text-muted-foreground">
-              — Built by Auth0 by Okta
-            </footer>
           </blockquote>
         </div>
       </div>
-      <div className="lg:p-8">
+      <div className="lg:p-8 flex h-screen">
         {session ? <WelcomeBackCard /> : <SignUpForm />}
       </div>
     </div>

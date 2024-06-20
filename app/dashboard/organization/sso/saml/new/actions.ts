@@ -6,6 +6,7 @@ import { Session } from "@auth0/nextjs-auth0"
 import slugify from "@sindresorhus/slugify"
 
 import { managementClient } from "@/lib/auth0"
+import { verifyDnsRecords } from "@/lib/domain-verification"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const createConnection = withServerActionAuth(
@@ -58,6 +59,17 @@ export const createConnection = withServerActionAuth(
         ? domainAliases.split(",").map((d) => d.trim())
         : []
 
+    // ensure that the domains are verified
+    for (const domain of parsedDomains) {
+      const verified = await verifyDnsRecords(domain, session.user.org_id)
+
+      if (!verified) {
+        return {
+          error: `The domain ${domain} is not verified.`,
+        }
+      }
+    }
+
     try {
       const samlOptions = {
         signInEndpoint: signInUrl,
@@ -102,7 +114,7 @@ export const createConnection = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )
 
@@ -143,6 +155,6 @@ export const deleteConnection = withServerActionAuth(
     }
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )

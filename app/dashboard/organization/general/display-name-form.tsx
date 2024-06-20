@@ -14,8 +14,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SubmitButton } from "@/components/submit-button"
 
-import { updateDisplayName } from "./actions"
-
 interface Props {
   organization: {
     id: string
@@ -27,17 +25,6 @@ interface Props {
 export function DisplayNameForm({ organization }: Props) {
   return (
     <Card>
-      <form
-        action={async (formData: FormData) => {
-          const { error } = await updateDisplayName(formData)
-
-          if (error) {
-            toast.error(error)
-          } else {
-            toast.success("The organization's display name has been updated.")
-          }
-        }}
-      >
         <CardHeader>
           <CardTitle>Display Name</CardTitle>
           <CardDescription>
@@ -74,7 +61,6 @@ export function DisplayNameForm({ organization }: Props) {
         <CardFooter className="flex justify-end">
           <SubmitButton>Save</SubmitButton>
         </CardFooter>
-      </form>
     </Card>
   )
 }

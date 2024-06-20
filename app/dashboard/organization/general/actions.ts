@@ -37,6 +37,6 @@ export const updateDisplayName = withServerActionAuth(
     return {}
   },
   {
-    role: "admin",
+    role: "Administrator",
   }
 )

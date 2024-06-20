@@ -102,7 +102,7 @@ export function MembersList({ members }: Props) {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        <SelectItem value="admin">Admin</SelectItem>
+                        <SelectItem value="Administrator">Administrator</SelectItem>
                         <SelectItem value="member">Member</SelectItem>
                       </SelectGroup>
                     </SelectContent>
